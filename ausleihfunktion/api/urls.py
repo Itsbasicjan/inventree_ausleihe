@@ -8,6 +8,7 @@ router.register(r'persons', PersonViewSet, basename='person')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('list/', views.StockLoanViewSet.as_view({'get': 'list'}), name='loan-list'),
 ]
 
-app_name = 'ausleihfunktion'
+app_name = 'stock-loans'

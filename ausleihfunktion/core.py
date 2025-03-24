@@ -23,6 +23,16 @@ class Ausleihfunktion(EventMixin, LocateMixin, ScheduleMixin, SettingsMixin, Use
     AUTHOR = "Jan Schüler"
     LICENSE = "MIT"
     
+    # UI integration
+    NAVIGATION = [
+        {
+            'label': 'Stock Loans',
+            'link': 'plugin:stock-loans:loan-list',
+            'icon': 'fa-exchange-alt',
+            'permission': 'ausleihfunktion.view_stockloan'
+        }
+    ]
+    
     # URL routing
     URLPATHS = [
         path('loan/', include(('ausleihfunktion.api.urls', 'ausleihfunktion'), namespace='stock-loans')),
